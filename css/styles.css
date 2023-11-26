@@ -95,12 +95,30 @@ padding-left: 0px;
      letter-spacing: 0.02em;
      color: #2e2f42;
     padding: 24px 0;
+    position: relative;
  }
 
  .studio-list:hover,
  .studio-list:focus {
      color: #404bbf;
  }
+  
+    .studio-list::after{
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+        transition:height 0.3 linear;
+    }
+
+        .studio-list:hover::after{
+            background-color: #404BBF;
+        }
+
+
 
 .contact-info{
     font-style: normal;
@@ -125,15 +143,24 @@ padding-left: 0px;
 
 
 /* -------title---------- */
- .main-title{
-    margin-bottom: 48px;
-    margin: 0 auto;
-
- }
+ 
  .firstsection {
      background-color: #2e2f42;
     padding: 188px 0;
-    
+    width: 1158px;
+    margin: 0 auto;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.70),
+        rgba(46, 47, 66, 0.70)
+        ), 
+        url(../images/BG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .main-title {
+     margin-bottom: 48px;
+     margin: 0 auto;
  }
 
  .effective {
@@ -187,8 +214,28 @@ padding-left: 0px;
     width: 264px;
     gap: 8px;
     width: calc((100% - 72px) / 4);
-
 }
+
+.flex-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+        border: 1px solid var(--LIGHT-SLATE, #8E8F99);
+        background: var(--CLOUD, #F4F4FD);
+        margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
  .head {
      font-weight: 500;
      font-size: 20px;
@@ -234,13 +281,14 @@ padding-left: 0px;
 .about-person{
     padding: 32px 0;
 }
+
 .about-job{
     font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #434455;
     text-align: center; 
-    padding: 32px;  
+    margin-bottom: 8px;
 }
 
 .flex-team{
@@ -263,6 +311,50 @@ padding-left: 0px;
 }
 
 
+
+
+
+.social-list{
+    display: flex;
+    column-gap: 24px;
+}
+
+.social-list-li{
+background-color: #4D5AE5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+
+.social-list-a{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    width: 100%;
+    height: 100%;
+    }
+        
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  .our-team {
      font-size: 36px;
      line-height: 1.11;
@@ -272,7 +364,6 @@ padding-left: 0px;
      color: #2e2f42;
      
     margin-bottom: 72px;
-
  }
 /* --------------/our team-------------- */
  
@@ -289,13 +380,53 @@ padding-left: 0px;
         column-gap: 24px;
         row-gap: 48px;
         flex-wrap: wrap;
-
 }
 .portfolio-list{
     display: flex;
     flex-direction: column;
     width: calc((100% - 48px) / 3);
+    
 }
+
+.photo-overlay{ 
+position: relative;
+overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    overflow: auto;
+    transform: translateY(100%);
+    transition: transform 250ms linear;
+}
+
+.photo-overlay:hover .overlay{
+transform: translateY(0%);
+}
+
+
+.p-overlay{
+color: var(--CLOUD, #F4F4FD);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+ padding-top:  40px;
+ padding-left: 32px;
+ padding-bottom: 164px;
+ padding-right: 32px;
+}
+
+
+
+
 .about-photo{
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
@@ -337,5 +468,53 @@ padding-left: 0px;
  .secondlogo{
     color: #f4f4fd;
  }
+
+
+ .footer-media-head{
+color: var(--WHITE, #FFF);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+    margin-bottom: 16px;
+ }
+
+ 
+
+.footer-logo{
+    display: flex;
+    column-gap: 16px;
+}
+
+.footer-logo-list{
+  width: 40px;
+  height: 40px;
+  background-color:#4D5AE5;
+  border-radius: 50%;
+}
+
+
+.footer-logo-item{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+}
+
+
+.logos-container-footer{
+
+margin-left: 120px; 
+}
+
+.flex-footer{
+    display: flex;
+}
+
+
+
  /* -------------/footer----------------- */
  
